@@ -1,7 +1,41 @@
 import streamlit as st
 
+# Custom CSS for styling
+st.markdown(
+    """
+    <style>
+    .title {
+        color: #800080; /* Purple */
+        font-size: 40px;
+        font-weight: bold;
+        text-align: center;
+    }
+    .header {
+        color: #FF1493; /* Pink */
+        font-size: 30px;
+        font-weight: bold;
+    }
+    .button {
+        background-color: #FF69B4; /* Pink */
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-align: center;
+        display: inline-block;
+        font-size: 16px;
+    }
+    .button:hover {
+        background-color: #C71585; /* Darker Pink */
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 # Title of the roadmap
-st.title("Interactive Learning Roadmap")
+st.markdown('<div class="title">Interactive Learning Roadmap</div>', unsafe_allow_html=True)
 
 # Define options for each stage
 stage_1_options = {
@@ -29,27 +63,25 @@ stage_4_options = {
 }
 
 # Stage 1
-st.header("Stage 1: Introduction to Programming")
+st.markdown('<div class="header">Stage 1: Introduction to Programming</div>', unsafe_allow_html=True)
 selected_course_1 = st.selectbox("Choose a course for Stage 1", list(stage_1_options.keys()))
 if st.button(f'Go to {selected_course_1}'):
-    st.markdown(f"[Click here to visit the course]({stage_1_options[selected_course_1]})")
+    st.markdown(f"<a href='{stage_1_options[selected_course_1]}' class='button' target='_blank'>Click here to visit the course</a>", unsafe_allow_html=True)
 
 # Stage 2
-st.header("Stage 2: Data Structures and Algorithms")
+st.markdown('<div class="header">Stage 2: Data Structures and Algorithms</div>', unsafe_allow_html=True)
 selected_course_2 = st.selectbox("Choose a course for Stage 2", list(stage_2_options.keys()))
 if st.button(f'Go to {selected_course_2}'):
-    st.markdown(f"[Click here to visit the course]({stage_2_options[selected_course_2]})")
+    st.markdown(f"<a href='{stage_2_options[selected_course_2]}' class='button' target='_blank'>Click here to visit the course</a>", unsafe_allow_html=True)
 
 # Stage 3
-st.header("Stage 3: Web Development")
+st.markdown('<div class="header">Stage 3: Web Development</div>', unsafe_allow_html=True)
 selected_course_3 = st.selectbox("Choose a course for Stage 3", list(stage_3_options.keys()))
 if st.button(f'Go to {selected_course_3}'):
-    st.markdown(f"[Click here to visit the course]({stage_3_options[selected_course_3]})")
+    st.markdown(f"<a href='{stage_3_options[selected_course_3]}' class='button' target='_blank'>Click here to visit the course</a>", unsafe_allow_html=True)
 
 # Stage 4
-st.header("Stage 4: Data Science and Machine Learning")
+st.markdown('<div class="header">Stage 4: Data Science and Machine Learning</div>', unsafe_allow_html=True)
 selected_course_4 = st.selectbox("Choose a course for Stage 4", list(stage_4_options.keys()))
 if st.button(f'Go to {selected_course_4}'):
-    st.markdown(f"[Click here to visit the course]({stage_4_options[selected_course_4]})")
-
-# Add more stages as needed...
+    st.markdown(f"<a href='{stage_4_options[selected_course_4]}' class='button' target='_blank'>Click here to visit the course</a>", unsafe_allow_html=True)
