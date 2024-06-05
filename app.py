@@ -1,20 +1,44 @@
 import streamlit as st
-from utils import get_answer, text_to_speech, autoplay_audio, speech_to_text
-from audio_recorder_streamlit import audio_recorder
-from streamlit_float import *
 
-# Initialize floating features for the interface
-float_init()
+# Title of the roadmap
+st.title("Learning Roadmap")
 
-# Initialize session state for managing chat messages
-def initialize_session_state():
-    if "messages" not in st.session_state:
-        st.session_state.messages = [{"role": "assistant", "content": "Hi! How may I assist you today?"}]
+# Stage 1
+st.header("Stage 1: Introduction to Programming")
+st.write("""
+- Learn the basics of programming
+- Recommended Course: [Python for Everybody](https://www.coursera.org/specializations/python)
+""")
+if st.button('Go to Coursera - Stage 1'):
+    st.markdown("[Click here to visit the course](https://www.coursera.org/specializations/python)")
 
-initialize_session_state()
+# Stage 2
+st.header("Stage 2: Data Structures and Algorithms")
+st.write("""
+- Understand fundamental data structures
+- Learn algorithms and their applications
+- Recommended Course: [Algorithms Specialization](https://www.coursera.org/specializations/algorithms)
+""")
+if st.button('Go to Coursera - Stage 2'):
+    st.markdown("[Click here to visit the course](https://www.coursera.org/specializations/algorithms)")
 
-st.title("OpenAI Conversational Chatbot 🤖")
+# Stage 3
+st.header("Stage 3: Web Development")
+st.write("""
+- Learn how to build web applications
+- Recommended Course: [Full-Stack Web Development](https://www.coursera.org/specializations/full-stack-react)
+""")
+if st.button('Go to Coursera - Stage 3'):
+    st.markdown("[Click here to visit the course](https://www.coursera.org/specializations/full-stack-react)")
 
-footer_container = st.container()
-with footer_container:
-    audio_bytes = audio_recorder()
+# Stage 4
+st.header("Stage 4: Data Science and Machine Learning")
+st.write("""
+- Explore data science techniques
+- Learn machine learning algorithms
+- Recommended Course: [Machine Learning](https://www.coursera.org/learn/machine-learning)
+""")
+if st.button('Go to Coursera - Stage 4'):
+    st.markdown("[Click here to visit the course](https://www.coursera.org/learn/machine-learning)")
+
+# Add more stages as needed...
