@@ -14,3 +14,7 @@ def initialize_session_state():
 initialize_session_state()
 
 st.title("OpenAI Conversational Chatbot 🤖")
+
+footer_container = st.container()
+with footer_container:
+    audio_bytes = audio_recorder()
